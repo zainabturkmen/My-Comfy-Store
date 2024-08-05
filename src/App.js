@@ -11,12 +11,18 @@ import {
   ErrorPage,
 } from "./pages";
 
-
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="products" element={<ProductsPage />} />
+        <Route path="products/:id" element={<SingleProdut />} />
+        <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </Router>
   );
 }
 
