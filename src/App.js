@@ -1,7 +1,23 @@
-import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Navbar, Sidebar, Footer } from "./components";
+
+import {
+  HomePage,
+  AboutPage,
+  ProductsPage,
+  SingleProdut,
+  CheckoutPage,
+  ErrorPage,
+} from "./pages";
+
 
 function App() {
-  return <h1>Heiioo</h1>;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 }
 
 export default App;
