@@ -1,15 +1,15 @@
-import HomePage from "./HomePage";
-import AboutPage from "./AboutPage";
-import ProductsPage from "./ProductsPage";
+import Home from "./HomePage";
+import About from "./AboutPage";
+import Products from "./ProductsPage";
 import SingleProdut from "./ProductsPage";
-import CheckoutPage from "./CheckoutPage";
-import ErrorPage from "./ErrorPage";
+import Checkout from "./CheckoutPage";
+import Error from "./ErrorPage";
 
 export {
-  HomePage,
-  AboutPage,
-  ProductsPage,
+  Home,
+  About,
+  Products,
   SingleProdut,
-  CheckoutPage,
-  ErrorPage,
+  Checkout,
+  Error,
 };

@@ -1,27 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import { Navbar, Sidebar, Footer } from "./components";
 
 import {
-  HomePage,
-  AboutPage,
-  ProductsPage,
+  Home,
+  About,
+  Products,
   SingleProdut,
-  CheckoutPage,
-  ErrorPage,
+  Checkout,
+  Error,
 } from "./pages";
 
 function App() {
   return (
     <Router>
+      <Navbar />
+      <Sidebar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
-        <Route path="products" element={<ProductsPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="products" element={<Products/>} />
         <Route path="products/:id" element={<SingleProdut />} />
-        <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="checkout" element={<Checkout />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
