@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <Wrapper>
+      <h5>
+        {new Date().getFullYear()}
+        <span>ComfySloth</span> All Rights Reserved
+      </h5>
+    </Wrapper>
+  );
+};
 
-export default Footer
+const Wrapper = styled.div`
+  height: 100px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: var(--promary-color);
+  }
+`;
+
+export default Footer;

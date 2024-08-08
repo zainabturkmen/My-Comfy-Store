@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 
-
 const Navbar = () => {
   return (
     <Nav>
@@ -29,7 +28,7 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <CartButtons/>  
+        <CartButtons />
       </div>
     </Nav>
   );
@@ -41,7 +40,7 @@ const Nav = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 1.3em 0.3em;
+    margin: 1.6em 0.3em;
   }
 
   img {
@@ -53,7 +52,7 @@ const Nav = styled.div`
     border: none;
     font-size: 1.6em;
     margin: 0 0.2em;
-    color: #a6602d;
+    color: var(--promary-color);
   }
 
   ul {
@@ -80,6 +79,9 @@ const Nav = styled.div`
           color: #000;
           text-transform: capitalize;
           font-size: 1.2em;
+          &:hover {
+            border-bottom: 2px solid var(--promary-color);
+          }
         }
       }
     }
