@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import CartButtons from "./CartButtons";
 
 const Sidebar = () => {
-  const isOpen = false;
+  const isOpen = false; 
   return (
     <Wrapper>
       <aside className={`${isOpen ? "sidebar show-sidebar" : "sidebar"}`}>
