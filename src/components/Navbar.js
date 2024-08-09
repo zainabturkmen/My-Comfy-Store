@@ -53,6 +53,11 @@ const Nav = styled.div`
     font-size: 1.6em;
     margin: 0 0.2em;
     color: var(--promary-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   ul {
