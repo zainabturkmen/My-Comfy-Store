@@ -3,9 +3,9 @@ import logo from "../assets/logo.svg"
 
 const Navbar = () => {
   return (
-    <Nav>
+    <nav>
       
-    </Nav>
+    </nav>
   )
 }
 
