@@ -2,18 +2,20 @@ import React from "react";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useProductsContext } from "../context/products_context";
 
 const CartButtons = () => {
+  const { closeSidebar } = useProductsContext();
   return (
     <Wrapper>
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-icon">
           <FaShoppingCart />
           <span className="count">12</span>
         </span>
       </Link>
-      <button className="login">
+      <button className="login" onClick={closeSidebar}>
         Login
         <span>
           <FaUserPlus />
@@ -64,7 +66,7 @@ const Wrapper = styled.div`
   }
   @media (max-width: 700px) {
     .login,
-    .cart-btn  {
+    .cart-btn {
       display: none;
     }
   }
