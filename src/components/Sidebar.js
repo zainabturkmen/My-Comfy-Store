@@ -105,6 +105,7 @@ const Wrapper = styled.div`
       }
     }
   }
+  
   .login,
   .cart-btn {
     display: block;
