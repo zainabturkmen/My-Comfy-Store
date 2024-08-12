@@ -8,14 +8,14 @@ const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   return (
     <Wrapper>
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-icon">
           <FaShoppingCart />
           <span className="count">12</span>
         </span>
       </Link>
-      <button className="login" onClick={closeSidebar}>
+      <button className="login">
         Login
         <span>
           <FaUserPlus />
