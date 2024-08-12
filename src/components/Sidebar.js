@@ -50,7 +50,7 @@ const Wrapper = styled.div`
     height: 100%;
     background-color: white;
     transform: translate(-100%);
-    transition: all 0.6s linear;
+    transition: all 0.3s linear;
     z-index: 1;
     padding: 2em 1em;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  
+
   .login,
   .cart-btn {
     display: block;
