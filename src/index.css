@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 
-:root{
-  --promary-color : #A6602D;
+:root {
+  --promary-color: #a6602d;
 }
 
 body {
@@ -23,4 +23,17 @@ ul {
 }
 a {
   text-decoration: none;
+}
+
+.btn {
+  color: white;
+  background-color: hsl(22, 31%, 52%);
+  padding: 0.4em 1em;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  color: hsl(22, 28%, 21%);
+  background: hsl(22, 31%, 67%);
 }
