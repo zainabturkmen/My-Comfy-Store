@@ -17,7 +17,6 @@ export const links = [
     text: "products",
     url: "/products",
   },
-  
 ];
 
 export const services = [
@@ -25,19 +24,19 @@ export const services = [
     id: 1,
     icon: <GiCompass />,
     title: "mission",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
+    text: "At the heart of our mission is a commitment to excellence and customer satisfaction. We strive to make the process of creating custom furniture an enjoyable and fulfilling experience",
   },
   {
     id: 2,
     icon: <GiDiamondHard />,
     title: "vision",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
+    text: "Our vision is to revolutionize the world of custom furniture by combining innovation and creativity to craft timeless pieces that elevate living spaces. We strive to be the leading name in bespoke furniture.",
   },
   {
     id: 3,
     icon: <GiStabbedNote />,
     title: "history",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
+    text: "Founded with a passion for craftsmanship and a dedication to personalized design, our journey began as a small workshop focused on creating unique, custom-made furniture.",
   },
 ];
 
