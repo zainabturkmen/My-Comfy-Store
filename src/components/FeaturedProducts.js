@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
         <div className="underline"></div>
       </div>
       <div className="section-center featured">
-        {featured.slice(0, 7).map((product) => {
+        {featured.slice(0, 6).map((product) => {
           return <Products key={product.id} {...product} />;
         })}
       </div>
@@ -74,6 +74,7 @@ const Wrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
     margin-top: 3em;
+  
   }
 
   .hero-btn {

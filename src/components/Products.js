@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaShoppingCart } from "react-icons/fa";
+import { formatPrice } from "../utils/helpers";
 
 const Products = ({ image, name, price, id }) => {
   return (
@@ -18,7 +19,7 @@ const Products = ({ image, name, price, id }) => {
           station.
         </p>
         <div className="price-class">
-          <p>{price}</p>
+          <p>{formatPrice(price)}</p>
           <Link to="/checkout" className="cart-btn">
             <FaShoppingCart />
           </Link>
@@ -34,13 +35,22 @@ const Wrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   margin: 0 1em;
+  border-radius: 10px;
+
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0.1em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+  &:hover {
+    transform: scale(1.1);
+  }
 
   .container {
     width: 100%;
     img {
       width: 100%;
       height: 200px;
-      border-radius: 8px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
       object-fit: cover; /* Ensure image covers the entire area */
     }
   }
@@ -49,10 +59,9 @@ const Wrapper = styled.div`
     text-align: start;
     max-width: 340px;
     margin-top: 1em;
-    padding: 0 0.2em;
+    padding: 1em;
 
     h5 {
-      margin: 8px 0;
       text-transform: capitalize;
       font-size: 1em;
       margin-bottom: 0.2em;
@@ -75,7 +84,7 @@ const Wrapper = styled.div`
     }
 
     .cart-btn {
-      margin-top: -.5em;
+      margin-top: 0.3em;
       font-size: 1.4em;
       color: #000;
     }
