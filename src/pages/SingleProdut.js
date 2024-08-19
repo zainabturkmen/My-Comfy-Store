@@ -38,6 +38,7 @@ const SingleProdut = () => {
             </svg>
             <span>(100 Customers reviews)</span>
           </div>
+          <span className="price">$30.99</span>
           <p className="desc">
             Cloud bread VHS hell of banjo bicycle rights jianbing umami
             mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher
@@ -74,6 +75,10 @@ const SingleProdut = () => {
 
 const Wrapper = styled.div`
   margin: 4rem 2rem;
+
+  .price {
+    display: none;
+  }
 
   .container {
     display: flex;
@@ -197,6 +202,36 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 1285px) {
+    margin: 6.5rem 7.5rem;
+    margin-right: 9rem;
+
+    .images-container {
+      .big-img {
+        height: 550px;
+      }
+    }
+
+    .small-images {
+      height: 70px;
+    }
+
+    .title {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    .desc {
+      font-size: 1rem;
+      line-height: 35px;
+    }
+    .star-container {
+      gap: 38px;
+    }
+
+    .price {
+      display: block;
+      margin: 0.5rem 0;
+      color: #a6602d;
+    }
   }
 `;
 
