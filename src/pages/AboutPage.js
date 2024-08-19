@@ -20,6 +20,7 @@ const AboutPage = () => {
         </p>
       </div>
     </Wrapper>
+
   );
 };
 
@@ -124,6 +125,8 @@ const Wrapper = styled.div`
       font-size: 18px;
     }
   }
+
 `;
 
 export default AboutPage;
+
