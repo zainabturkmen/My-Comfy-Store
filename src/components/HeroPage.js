@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const HeroPage = ({ title }) => {
+const HeroPage = ({ title, product }) => {
   return (
     <Wrapper>
       <div className="section-center">
         <h3>
           <Link to="/" className="link">
             Home
-          </Link>{" "}
-          / {title}
+          </Link>
+          {product && <Link to="/products" className="link">/ Products </Link>}/ {title}
         </h3>
       </div>
     </Wrapper>

@@ -74,7 +74,7 @@ const Wrapper = styled.div`
     align-items: center;
     flex-wrap: wrap;
     margin-top: 3em;
-  
+    max-width: 1200px;
   }
 
   .hero-btn {
