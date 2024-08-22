@@ -9,6 +9,9 @@ import FeaturedProducts from "./FeaturedProducts";
 import Contact from "./Contact";
 import Loading from "./Loading";
 import Error from "./Error";
+import ProductImages from "./ProductImages";
+import Stars from "./Stars";
+import AddToCart from "./AddToCart";
 
 export {
   Navbar,
@@ -21,4 +24,7 @@ export {
   Contact,
   Loading,
   Error,
+  ProductImages,
+  Stars,
+  AddToCart,
 };
