@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const AddToCart = () => {
   return (

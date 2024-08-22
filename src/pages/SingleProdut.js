@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
