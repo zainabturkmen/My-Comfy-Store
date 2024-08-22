@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const AddToCart = () => {
+const AddToCart = ({ product }) => {
+  const { id, stock, colors } = product;
+
+  const [mainColor, SetMainColor] = useState(colors[0]);
   return (
     <>
       <div className="calc-container">
