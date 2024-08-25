@@ -36,11 +36,13 @@ const Wrapper = styled.div`
 
   article {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-    padding: 2em 3em;
+    padding: 2.1em 3em;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    width: 450px;
+    margin-top: 6em;
 
     h4 {
       display: grid;

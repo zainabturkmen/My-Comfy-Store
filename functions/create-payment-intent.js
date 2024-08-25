@@ -17,6 +17,8 @@ exports.handler = async function (event, context) {
         amount: calculateOrderAmount(),
         currency: "usd",
       });
+      console.log("Payment Intent Client Secret:", paymentIntent.client_secret); // Log the secret
+
       return {
         statusCode: 200,
         body: JSON.stringify({ clientSecret: paymentIntent.client_secret }),

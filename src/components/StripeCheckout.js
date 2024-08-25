@@ -53,9 +53,14 @@ const CheckoutForm = () => {
     try {
       const { data } = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        JSON.stringify({ cart, shipping_fee, total_amount })
+        JSON.stringify({ cart, shipping_fee, total_amount }),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
-      console.log(data.clientSecret);
+
       setClientSecret(data.clientSecret);
     } catch (error) {}
   };
@@ -147,12 +152,12 @@ const StripeCheckout = () => {
 };
 
 const Wrapper = styled.section`
-article{
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: .2em;
-}
+  article {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+  }
   form {
     width: 450px;
     align-self: center;
