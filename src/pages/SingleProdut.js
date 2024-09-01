@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
+import { FaCheck } from "react-icons/fa";
+
 import {
   Loading,
   Error,
@@ -33,7 +35,11 @@ const SingleProdut = () => {
     id: sku,
     company,
     images,
+    colors = [],
   } = product;
+  console.log(product);
+
+  const [mainColor, setMainColor] = useState(colors[0]);
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
@@ -59,8 +65,8 @@ const SingleProdut = () => {
     <>
       <HeroPage title={name} product />
       <Wrapper>
-        <Link className="btnn" to="/">
-          Back Home
+        <Link className="btnn" to="/products">
+          Back To Products
         </Link>
         {/* images and info container */}
         <div className="container">
@@ -84,21 +90,24 @@ const SingleProdut = () => {
               <span>{company}</span>
               <div className="underline"></div>
               <strong>color:</strong>
-              <span className="color"></span>
+              <span>
+                {colors.map((color, index) => {
+                  return (
+                    <button
+                      key={index}
+                      style={{ background: color }}
+                      className={`${
+                        mainColor === color ? "color active" : "color"
+                      }`}
+                      onClick={() => setMainColor(color)}>
+                      {index}
+                    </button>
+                  );
+                })}
+              </span>
             </div>
 
-            {
-              stock > 0 && <AddToCart product={product} />
-              // <div className="calc-container">
-              //   <FaMinus />
-              //   <span className="count">1</span>
-              //   <FaPlus />
-              // </div>
-            }
-
-            <Link to="/checkout" className="btnn">
-              Add to cart
-            </Link>
+            {stock > 0 && <AddToCart product={product} />}
           </div>
           {/* info end */}
         </div>
@@ -117,6 +126,8 @@ const Wrapper = styled.div`
   .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 4rem;
   }
   .btnn {
@@ -160,10 +171,10 @@ const Wrapper = styled.div`
   }
 
   /* info container styles */
+  .info-container {
+  }
 
   .title {
-    margin: 0;
-    margin-bottom: 0.5rem;
     font-size: 30px;
     text-transform: capitalize;
   }
@@ -211,8 +222,16 @@ const Wrapper = styled.div`
   .color {
     width: 20px;
     height: 20px;
-    background-color: black;
     border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    margin-right: 1em;
+  }
+
+  .active {
+    opacity: 1;
   }
 
   .calc-container {
@@ -220,6 +239,11 @@ const Wrapper = styled.div`
     gap: 2.5rem;
     align-items: center;
     margin: 1.5rem 0;
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
   }
 
   .count {

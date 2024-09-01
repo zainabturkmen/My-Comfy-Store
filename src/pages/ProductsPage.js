@@ -1,56 +1,115 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Image from "../assets/about-page-img.png";
 import { HeroPage } from "../components";
+import { useFilterContext } from "../context/filter_context";
+import { formatPrice, getUniqueValue } from "../utils/helpers";
+import { Link } from "react-router-dom";
 
 const ProductsPage = () => {
+  const {
+    filtered_products: products,
+    sort,
+    updateSort,
+    filters: {
+      text,
+      company,
+      category,
+      color,
+      min_price,
+      max_price,
+      price,
+      shipping,
+    },
+    updateFilters,
+    clearFilters,
+    all_products,
+  } = useFilterContext();
+
   const [priceState, usePriceState] = useState(0);
 
   function ChangePrice(e) {
     usePriceState(e.target.value);
   }
 
+  const categories = getUniqueValue(all_products, "category");
+  const Companies = getUniqueValue(all_products, "company");
+  const colors = getUniqueValue(all_products, "colors");
+  console.log(colors);
+
   return (
     <>
       <HeroPage title="products" />
 
       <Wrapper>
-        {/* <HeroPage title="products" /> */}
-
         <div className="filters-container">
           {/* search input */}
-          <input
-            className="search"
-            type="text"
-            id="search"
-            placeholder="Search"
-          />
+          <form onSubmit={(e) => e.preventDefault()}>
+            <input
+              className="search"
+              type="text"
+              name="text"
+              placeholder="Search"
+              value={text}
+              onChange={updateFilters}
+            />
+          </form>
           {/* Categories */}
           <h3>Category</h3>
           <div className="categories-container">
-            <p>All</p>
-            <p>Living Room</p>
-            <p>Office</p>
-            <p>Kitchen</p>
-            <p>Bedroom</p>
-            <p>Dining</p>
+            {categories.map((c, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={updateFilters}
+                  name="category"
+                  type="button"
+                  className={`${
+                    category === c.toLowerCase() ? "activei" : null
+                  }`}>
+                  {c}
+                </button>
+              );
+            })}
           </div>
           {/* Companies */}
           <h3>Company</h3>
-          <select className="Company">
-            <option value="all">all</option>
+          <select
+            className="Company"
+            name="company"
+            value={company}
+            onChange={updateFilters}>
+            {Companies.map((c, index) => {
+              return (
+                <option key={index} value={c}>
+                  {c}
+                </option>
+              );
+            })}
           </select>
           {/* Colors */}
           <h3>Colors</h3>
           <div className="spans-container">
-            <span className="all">All</span>
-            <span className="pink"></span>
-            <span className="brown"></span>
-            <span className="green"></span>
+            {colors.map((c, index) => {
+              const isActive = color === c;
+              return (
+                <button
+                  key={index}
+                  name="color"
+                  style={{
+                    backgroundColor: c !== "all" ? c : "transparent",
+                    opacity: isActive ? 1 : 0.4,
+                  }}
+                  className="color-btn"
+                  data-color={c}
+                  onClick={updateFilters}>
+                  {c === "all" ? "All" : null}
+                </button>
+              );
+            })}
           </div>
           {/* Prices */}
           <h3>Price</h3>
-          <p>{priceState}</p>
+          <p>{formatPrice(price)}</p>
           <input
             type="range"
             name=""
@@ -73,45 +132,34 @@ const ProductsPage = () => {
         <div className="products-container">
           {/* sort part */}
           <div className="sort-container">
-            <span>10 Products Found</span>
+            <span>{products.length} Products Found</span>
             <div className="underline"></div>
-            <div className="sort">
-              <span>Sort By</span>
-              <select>
-                <option value="Price (Lowest)">Price (Lowest)</option>
+            <form className="sort">
+              <label>Sort By</label>
+              <select name="sort" value={sort} onChange={updateSort}>
+                <option value="price-lowest">Price (Lowest)</option>
+                <option value="Price-highest">Price (highest)</option>
+                <option value="name-a">name (a)</option>
+                <option value="name-z">name (z)</option>
               </select>
-            </div>
+            </form>
           </div>
           {/* Products part */}
           <div className="products">
-            <div className="product">
-              <img src={Image} alt="image" />
-              <div className="name-price-container">
-                <p>Modern Poster</p>
-                <span>$30.99</span>
-              </div>
-            </div>
-            <div className="product">
-              <img src={Image} alt="image" />
-              <div className="name-price-container">
-                <p>Modern Poster</p>
-                <span>$30.99</span>
-              </div>
-            </div>
-            <div className="product">
-              <img src={Image} alt="image" />
-              <div className="name-price-container">
-                <p>Modern Poster</p>
-                <span>$30.99</span>
-              </div>
-            </div>
-            <div className="product">
-              <img src={Image} alt="image" />
-              <div className="name-price-container">
-                <p>Modern Poster</p>
-                <span>$30.99</span>
-              </div>
-            </div>
+            {products.map((product) => {
+              const { id, image, name, price } = product;
+              return (
+                <div className="product" key={id}>
+                  <Link to={`/products/${id}`}>
+                    <img src={image} alt={name} />
+                  </Link>
+                  <div className="name-price-container">
+                    <p>{name}</p>
+                    <span>{formatPrice(price)}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Wrapper>
@@ -141,35 +189,35 @@ const Wrapper = styled.div`
   }
   .spans-container {
     display: flex;
-    gap: 0.9rem;
+    gap: 0.5rem;
     align-items: center;
 
-    span {
-      width: 24px;
-      border-radius: 50%;
-      height: 24px;
-    }
-    .all {
-      border-bottom: 1px solid black;
-      border-radius: 0;
-    }
-    .pink {
-      background-color: #f46bd6;
-    }
-    .green {
-      background-color: #4fcf64;
-    }
-    .brown {
-      background-color: #a6602d;
+    .color-btn {
+      border: none;
+      border-radius: 5em;
+      padding: 0.7em;
+      background-color: transparent;
+      cursor: pointer;
     }
   }
+
   .categories-container {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1em;
+    button {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .activei {
+      color: #a6602d;
+    }
   }
   .Company {
-    width: 86px;
+    width: 100px;
     border: none;
     padding: 0.3rem 0.5rem;
     font-size: 1.1rem;
