@@ -25,12 +25,6 @@ const ProductsPage = () => {
     all_products,
   } = useFilterContext();
 
-  const [priceState, usePriceState] = useState(0);
-
-  function ChangePrice(e) {
-    usePriceState(e.target.value);
-  }
-
   const categories = getUniqueValue(all_products, "category");
   const Companies = getUniqueValue(all_products, "company");
   const colors = getUniqueValue(all_products, "colors");
@@ -112,20 +106,26 @@ const ProductsPage = () => {
           <p>{formatPrice(price)}</p>
           <input
             type="range"
-            name=""
-            id=""
-            min="0"
-            max="4000"
-            value={priceState}
-            onChange={(e) => ChangePrice(e)}
+            name="price"
+            min={min_price}
+            max={max_price}
+            onChange={updateFilters}
           />
           {/* Free shipping */}
           <div className="free-shipping-container">
-            <h3>Free Shipping</h3>
-            <input type="checkbox" name="" id="" />
+            <label htmlFor="shipping">Free Shipping</label>
+            <input
+              type="checkbox"
+              name="shipping"
+              id="shipping"
+              onChange={updateFilters}
+              checked={shipping}
+            />
           </div>
           {/* clear Filter Button */}
-          <button className="btn">Clear Filter</button>
+          <button className="btn" onClick={clearFilters}>
+            Clear Filter
+          </button>
         </div>
 
         {/* products part */}
@@ -229,15 +229,17 @@ const Wrapper = styled.div`
     align-items: center;
     gap: 1rem;
 
-    h3 {
+    label {
       margin: 0;
+      font-size: 1.3em;
+      font-weight: 600;
     }
 
     margin-top: 2.2rem;
     margin-bottom: 0.6rem;
     input {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       border: 2px solid black;
     }
   }
