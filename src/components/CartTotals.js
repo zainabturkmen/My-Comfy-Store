@@ -12,12 +12,12 @@ const CartTotals = () => {
     <Wrapper>
       <div>
         <article>
-          <h5>
+          <h4>
             subtotal : <span>{formatPrice(total_amount)}</span>
-          </h5>
-          <p>
+          </h4>
+          <h4>
             shipping Fee : <span>{formatPrice(shipping_fee)}</span>
-          </p>
+          </h4>
           <hr />
           <h4>
             order total :{" "}
@@ -35,19 +35,14 @@ const Wrapper = styled.div`
 
   article {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-    width: 327px;
-    height: 130px;
-    padding: 2em;
+    padding: 2em 3em;
+    border-radius: 10px;
 
-    h4,
-    h5,
-    p {
+    h4 {
       display: grid;
       grid-template-columns: 200px 1fr;
     }
-    p {
-      margin-bottom: 1em;
-    }
+
     h4 {
       margin-top: 1rem;
     }
