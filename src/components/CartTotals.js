@@ -15,9 +15,14 @@ const CartTotals = () => {
           <h5>
             subtotal : <span>{formatPrice(total_amount)}</span>
           </h5>
-          <h5>
+          <p>
             shipping Fee : <span>{formatPrice(shipping_fee)}</span>
-          </h5>
+          </p>
+          <hr />
+          <h4>
+            order total :{" "}
+            <span>{formatPrice(total_amount + shipping_fee)}</span>
+          </h4>
         </article>
       </div>
     </Wrapper>
@@ -25,23 +30,29 @@ const CartTotals = () => {
 };
 
 const Wrapper = styled.div`
-  div {
+  display: flex;
+  justify-content: start;
+
+  article {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
     width: 327px;
     height: 130px;
     padding: 2em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* align-items: start; */
-    text-align: start;
 
-    article {
-      display: flex;
-      justify-content: space-around;
+    h4,
+    h5,
+    p {
+      display: grid;
+      grid-template-columns: 200px 1fr;
     }
-    h5 {
-      font-size: 1em;
+    p {
+      margin-bottom: 1em;
+    }
+    h4 {
+      margin-top: 1rem;
+    }
+    @media (min-width: 776px) {
+      justify-content: flex-end;
     }
   }
 `;
