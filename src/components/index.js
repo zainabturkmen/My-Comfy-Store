@@ -12,6 +12,9 @@ import Error from "./Error";
 import ProductImages from "./ProductImages";
 import Stars from "./Stars";
 import AddToCart from "./AddToCart";
+import CartColumns from "./CartColumns";
+import CartItems from "./CartItems";
+import CartTotals from "./CartTotals";
 
 export {
   Navbar,
@@ -27,4 +30,7 @@ export {
   ProductImages,
   Stars,
   AddToCart,
+  CartColumns,
+  CartItems,
+  CartTotals,
 };

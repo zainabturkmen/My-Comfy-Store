@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../context/cart_context";
 
 const AddToCart = ({ product }) => {
-  const { id, stock } = product;
+  const { addToCart } = useCartContext();
+  const { id, stock, colors } = product;
+
+  const [mainColor, setMainColor] = useState(colors[0]);
 
   const [amount, setAmount] = useState(1);
 
@@ -28,6 +32,20 @@ const AddToCart = ({ product }) => {
 
   return (
     <>
+      <strong className="color-title">color:</strong>
+      <span>
+        {colors.map((color, index) => {
+          return (
+            <button
+              key={index}
+              style={{ background: color }}
+              className={`${mainColor === color ? "color active" : "color"}`}
+              onClick={() => setMainColor(color)}>
+              {index}
+            </button>
+          );
+        })}
+      </span>
       <div className="calc-container">
         <button onClick={decrease}>
           <FaMinus />
@@ -37,7 +55,10 @@ const AddToCart = ({ product }) => {
           <FaPlus />
         </button>
       </div>
-      <Link to="/checkout" className="btnn">
+      <Link
+        to="/checkout"
+        className="btnn"
+        onClick={() => addToCart(id, amount, colors, product)}>
         Add to cart
       </Link>
     </>

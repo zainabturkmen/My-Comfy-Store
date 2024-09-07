@@ -35,11 +35,8 @@ const SingleProdut = () => {
     id: sku,
     company,
     images,
-    colors = [],
   } = product;
   console.log(product);
-
-  const [mainColor, setMainColor] = useState(colors[0]);
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
@@ -89,22 +86,6 @@ const SingleProdut = () => {
               <strong>Brand:</strong>
               <span>{company}</span>
               <div className="underline"></div>
-              <strong>color:</strong>
-              <span>
-                {colors.map((color, index) => {
-                  return (
-                    <button
-                      key={index}
-                      style={{ background: color }}
-                      className={`${
-                        mainColor === color ? "color active" : "color"
-                      }`}
-                      onClick={() => setMainColor(color)}>
-                      {index}
-                    </button>
-                  );
-                })}
-              </span>
             </div>
 
             {stock > 0 && <AddToCart product={product} />}
@@ -217,6 +198,10 @@ const Wrapper = styled.div`
     background-color: #e3c5ae;
     margin: 0.8rem 0.5rem;
     grid-area: under;
+  }
+
+  .color-title {
+    margin-right: 1em;
   }
 
   .color {
