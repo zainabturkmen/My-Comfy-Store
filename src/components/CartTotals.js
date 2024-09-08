@@ -37,14 +37,16 @@ const Wrapper = styled.div`
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
     padding: 2em 3em;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
     h4 {
       display: grid;
       grid-template-columns: 200px 1fr;
     }
-
-    h4 {
-      margin-top: 1rem;
+    span{
+        font-weight: 400;
     }
     @media (min-width: 776px) {
       justify-content: flex-end;
