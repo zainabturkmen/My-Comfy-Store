@@ -44,7 +44,7 @@ const Wrapper = styled.div`
       background-color: transparent;
       color: black;
       text-decoration: underline;
-      font-size: 1.2em;
+      font-size: 1em;
       cursor: pointer;
     }
   }

@@ -23,7 +23,7 @@ const CartTotals = () => {
             order total :{" "}
             <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
-        </article>
+              </article>
       </div>
     </Wrapper>
   );
