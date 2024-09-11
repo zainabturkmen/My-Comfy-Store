@@ -1,15 +1,96 @@
 import React from "react";
 import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
+import AmountButtons from "./AmountButtons";
 import { FaTrash } from "react-icons/fa";
 import { useCartContext } from "../context/cart_context";
 
-const CartItems = () => {
-    return <Wrapper>
-      
-  </Wrapper>;
+const CartItems = ({ id, image, name, color, price, amount }) => {
+  const { removeItem, toggleAmount } = useCartContext();
+
+  const increase = () => {};
+
+  const descrease = () => {};
+  return (
+    <Wrapper>
+      <div className="title">
+        <img src={image} alt={name} />
+        <div>
+          <h5 className="name">{name}</h5>
+          <p className="color">
+            Color : <span style={{ background: color }}></span>
+          </p>
+          <h5 className="price-small">{formatPrice(price)}</h5>
+        </div>
+      </div>
+      <h5 className="price">{formatPrice(price)}</h5>
+      <AmountButtons
+        amount={amount}
+        increase={increase}
+        descrease={descrease}
+      />
+      <h5 className="subtotal">{formatPrice(price * amount)}</h5>
+      <button
+        type="button"
+        className="remove-btn"
+        onClick={() => removeItem(id)}>
+        <FaTrash />
+      </button>
+    </Wrapper>
+  );
 };
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3em;
+  align-items: center;
+  .title {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+  }
+  h5 {
+    text-transform: capitalize;
+  }
+  img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    display: block;
+  }
+  .color {
+    display: flex;
+    align-items: center;
+  }
+
+  .color span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+  }
+
+  .remove-btn {
+    background-color: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+  }
+  .price {
+    display: none;
+  }
+  @media (min-width: 776px) {
+    .price-small {
+      display: none;
+    }
+
+    .price {
+      display: block;
+    }
+  }
+`;
 
 export default CartItems;
