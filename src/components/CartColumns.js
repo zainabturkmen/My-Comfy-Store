@@ -15,17 +15,20 @@ const CartColumns = () => {
 };
 
 const Wrapper = styled.div`
-
-.content{
+  .content {
     margin-top: 3em;
     display: flex;
     justify-content: space-around;
-    h5{
-        font-weight: 400;
-        font-size: 16px;
+    h5 {
+      font-weight: 400;
+      font-size: 16px;
     }
-}
-
+  }
+  @media (max-width: 776px) {
+    .content {
+      display: none;
+    }
+  }
 `;
 
 export default CartColumns;

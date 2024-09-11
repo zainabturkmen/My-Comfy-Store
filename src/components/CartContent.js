@@ -9,7 +9,7 @@ const CartContent = () => {
   return (
     <Wrapper>
       <CartColumns />
-      <hr/>
+      <hr />
       {cart.map((item) => {
         return <CartItems key={item.id} {...item} />;
       })}
@@ -18,7 +18,7 @@ const CartContent = () => {
         <Link to="/products" className="btn">
           Continue shopping
         </Link>
-        <button type="button" className=" clear-btn" onClick={clearCart}>
+        <button type="button" className="clear-btn" onClick={clearCart}>
           Clear shopping Cart
         </button>
       </div>
@@ -28,7 +28,7 @@ const CartContent = () => {
 };
 
 const Wrapper = styled.div`
-padding: 2em;
+  padding: 2em;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -44,8 +44,14 @@ padding: 2em;
       background-color: transparent;
       color: black;
       text-decoration: underline;
-      font-size: 1.4em;
+      font-size: 1.2em;
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: 776px) {
+    .btn {
+      font-size: 0.7em;
     }
   }
 `;
