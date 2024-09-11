@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
+import { formatPrice } from "../utils/helpers";
+import { FaTrash } from "react-icons/fa";
+import { useCartContext } from "../context/cart_context";
 
 const CartItems = () => {
-  return (
-    <div>CartItems</div>
-  )
-}
+    return <Wrapper>
+      
+  </Wrapper>;
+};
 
-export default CartItems
+const Wrapper = styled.article``;
+
+export default CartItems;
