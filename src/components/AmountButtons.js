@@ -24,6 +24,7 @@ gap: .5em;
 .amount-btn{
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 `;
 
