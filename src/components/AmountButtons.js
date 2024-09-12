@@ -16,6 +16,15 @@ const AmountButtons = ({ amount, increase, descrease }) => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+display: flex;
+flex-direction: row;
+gap: .5em;
+
+.amount-btn{
+  background-color: transparent;
+  border: none;
+}
+`;
 
 export default AmountButtons;
