@@ -19,7 +19,6 @@ const Wrapper = styled.div`
     margin-top: 3em;
     display: flex;
     justify-content: space-evenly;
-    /* margin: 0 3em; */
     h5 {
       font-weight: 400;
       font-size: 16px;

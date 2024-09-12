@@ -43,7 +43,6 @@ const CartItems = ({ id, image, name, color, price, amount }) => {
 const Wrapper = styled.article`
   display: flex;
   justify-content: space-between;
-  margin: 0 3em;
   align-items: center;
   .title {
     display: flex;
@@ -53,6 +52,10 @@ const Wrapper = styled.article`
   }
   h5 {
     text-transform: capitalize;
+    font-size: .7em;
+  }
+  p{
+    font-size: .8em;
   }
   img {
     width: 100px;
