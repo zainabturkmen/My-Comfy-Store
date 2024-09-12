@@ -82,12 +82,20 @@ const Wrapper = styled.article`
   .price {
     display: none;
   }
+
+  .subtotal {
+    display: none;
+  }
+
   @media (min-width: 776px) {
     .price-small {
       display: none;
     }
 
     .price {
+      display: block;
+    }
+    .subtotal {
       display: block;
     }
   }
