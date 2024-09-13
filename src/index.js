@@ -5,17 +5,31 @@ import "./index.css";
 import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
+import { Auth0Provider } from "@auth0/auth0-react";
+
+// Domain
+// dev-xocw6fw7c4ppcsm8.us.auth0.com
+// cleint ID
+// H4K9Is57Ho3MFWURzNJGCoDAlstPZgna
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ProductsProvider>
-      <FilterProvider>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </FilterProvider>
-    </ProductsProvider>
+    <Auth0Provider
+      domain="dev-xocw6fw7c4ppcsm8.us.auth0.com"
+      clientId="H4K9Is57Ho3MFWURzNJGCoDAlstPZgna"
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+      cacheLocation="localstorage">
+      <ProductsProvider>
+        <FilterProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </FilterProvider>
+      </ProductsProvider>
+    </Auth0Provider>
   </React.StrictMode>
 );
 

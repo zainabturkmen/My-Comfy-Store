@@ -45,6 +45,7 @@ export const CartProvider = ({ children }) => {
 
   // Sync cart with localStorage
   useEffect(() => {
+    dispatch({ type: "COUNT_CART_TOTALS" });
     localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
