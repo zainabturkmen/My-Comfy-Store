@@ -11,7 +11,7 @@ const CartTotals = () => {
 
   return (
     <Wrapper>
-      <div>
+      <div className="total-div">
         <article>
           <h4>
             subtotal : <span>{formatPrice(total_amount)}</span>
@@ -32,8 +32,11 @@ const CartTotals = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: start;
+  justify-content: center;
 
+  .total-div {
+    max-width: 450px;
+  }
   article {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
     padding: 2.1em 3em;
@@ -41,8 +44,14 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1em;
-    width: 450px;
     margin-top: 6em;
+    width: 100%;
+    align-self: center;
+    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+      0px 2px 5px 0px rgba(50, 50, 93, 0.1),
+      0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 7px;
+    /* padding: 40px; */
 
     h4 {
       display: grid;
@@ -53,6 +62,16 @@ const Wrapper = styled.div`
     }
     @media (min-width: 776px) {
       justify-content: flex-end;
+
+      .total-div {
+        width: 100px;
+      }
+    }
+  }
+  @media (max-width: 776px) {
+
+    .total-div {
+      width: 350px;
     }
   }
 `;
