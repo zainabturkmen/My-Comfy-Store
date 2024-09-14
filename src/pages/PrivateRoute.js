@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Navigate } from "react-router";
+import { useAuth0 } from "@auth0/auth0-react";
 
-const PrivateRoute = () => {
-  return (
-    <div>PrivateRoute</div>
-  )
-}
+const PrivateRoute = ({ children }) => {
+  const { user } = useAuth0();
+  if (!user) {
+    return <Navigate to="/" />;
+  }
+  return children;
+};
 
-export default PrivateRoute
+export default PrivateRoute;
