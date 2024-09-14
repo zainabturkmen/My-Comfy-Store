@@ -4,25 +4,40 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
 import { useCartContext } from "../context/cart_context";
+import { useUserContext } from "../context/user_context";
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext();
   const { total_items } = useCartContext();
+  const { loginWithRedirect, logout, myUser } = useUserContext();
   return (
     <Wrapper>
-      <Link to="/checkout" className="cart-btn" onClick={closeSidebar}>
-        Cart
-        <span className="cart-icon">
-          <FaShoppingCart />
-          <span className="count">{ total_items}</span>
-        </span>
-      </Link>
-      <button className="login">
-        Login
-        <span>
-          <FaUserPlus />
-        </span>
-      </button>
+      {myUser && (
+        <Link to="/checkout" className="cart-btn" onClick={closeSidebar}>
+          Cart
+          <span className="cart-icon">
+            <FaShoppingCart />
+            <span className="count">{total_items}</span>
+          </span>
+        </Link>
+      )}
+      {myUser ? (
+        <button
+          className="login"
+          onClick={() => logout({ returnTo: window.location.origin })}>
+          Logout
+          <span>
+            <FaUserMinus />
+          </span>
+        </button>
+      ) : (
+        <button className="login" onClick={loginWithRedirect}>
+          Login
+          <span>
+            <FaUserPlus />
+          </span>
+        </button>
+      )}
     </Wrapper>
   );
 };

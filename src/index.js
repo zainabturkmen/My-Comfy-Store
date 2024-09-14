@@ -6,6 +6,7 @@ import { ProductsProvider } from "./context/products_context";
 import { FilterProvider } from "./context/filter_context";
 import { CartProvider } from "./context/cart_context";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { UserProvider } from "./context/user_context";
 
 // Domain
 // dev-xocw6fw7c4ppcsm8.us.auth0.com
@@ -14,14 +15,15 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain="dev-xocw6fw7c4ppcsm8.us.auth0.com"
-      clientId="H4K9Is57Ho3MFWURzNJGCoDAlstPZgna"
-      authorizationParams={{
-        redirect_uri: window.location.origin,
-      }}
-      cacheLocation="localstorage">
+  // <React.StrictMode>
+  <Auth0Provider
+    domain="dev-xocw6fw7c4ppcsm8.us.auth0.com"
+    clientId="H4K9Is57Ho3MFWURzNJGCoDAlstPZgna"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+    cacheLocation="localstorage">
+    <UserProvider>
       <ProductsProvider>
         <FilterProvider>
           <CartProvider>
@@ -29,8 +31,9 @@ root.render(
           </CartProvider>
         </FilterProvider>
       </ProductsProvider>
-    </Auth0Provider>
-  </React.StrictMode>
+    </UserProvider>
+  </Auth0Provider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
