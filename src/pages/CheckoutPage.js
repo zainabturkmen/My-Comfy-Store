@@ -30,7 +30,7 @@ const CheckoutPage = () => {
 };
 
 const Wrapper = styled.div`
-  height: 75vh;
+  min-height: 75vh;
   .empty {
     display: flex;
     flex-direction: column;
