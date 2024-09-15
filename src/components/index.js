@@ -16,7 +16,7 @@ import CartColumns from "./CartColumns";
 import CartItems from "./CartItems";
 import CartTotals from "./CartTotals";
 import AmountButtons from "./AmountButtons";
-
+import StripeCheckout from "./StripeCheckout";
 export {
   Navbar,
   Sidebar,
@@ -35,4 +35,5 @@ export {
   CartItems,
   CartTotals,
   AmountButtons,
+  StripeCheckout,
 };
