@@ -22,8 +22,11 @@ const Hero = () => {
         <Link to="/products" className="btn hero-btn">
           shop now <HiArrowLongRight className="arrow-svg" />
         </Link>
+        <div className="layer"></div>
       </article>
       <article className="img-container">
+        <div className="layer1"></div>
+
         <img src={image1} alt="nice couch" className="main-img" />
         <img src={image2} alt="nice couch" className="accent-img" />
       </article>
@@ -35,6 +38,28 @@ const Wrapper = styled.div`
   margin: 2em 0;
   /* min-height: 60vh; */
 
+  .layer {
+    width: 387px;
+    height: 251px;
+    flex-shrink: 0;
+    border-radius: 387px;
+    background: var(--Primary-Color, #a6602d);
+    filter: blur(200px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .layer1 {
+    width: 387px;
+    height: 251px;
+    flex-shrink: 0;
+    border-radius: 387px;
+    background: var(--Primary-Color, #a6602d);
+    filter: blur(200px);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
   .content {
     display: flex;
     flex-direction: column;
