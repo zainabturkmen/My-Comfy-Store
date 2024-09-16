@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { Link } from "react-router-dom";
-import { CartColumns, CartItems, CartTotals } from "../components";
+import { CartColumns, CartItems, CartTotals, StripeCheckout } from "../components";
 
 const CartContent = () => {
   const { cart, clearCart } = useCartContext();
@@ -21,7 +21,19 @@ const CartContent = () => {
           Clear shopping Cart
         </button>
       </div>
-      <CartTotals />
+      <div>
+        <CartTotals />
+        {cart.length < 1 ? (
+          <div className="empty">
+            <h2>your cart is empty</h2>
+            <Link to="/products" className="btn">
+              Fill it
+            </Link>
+          </div>
+        ) : (
+          <StripeCheckout />
+        )}
+      </div>
     </Wrapper>
   );
 };

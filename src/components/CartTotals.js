@@ -26,14 +26,6 @@ const CartTotals = () => {
           </h4>
         </article>
       </div>
-      {cart.length < 1 ? (
-        <div className="empty">
-          <h2>your cart is empty</h2>
-          <Link to="/products" className="btn">Fill it</Link>
-        </div>
-      ) : (
-        <StripeCheckout />
-      )}
     </Wrapper>
   );
 };
