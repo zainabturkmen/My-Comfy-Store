@@ -38,7 +38,8 @@ const Wrapper = styled.div`
   margin: 2em 0;
   /* min-height: 60vh; */
 
-  .layer {
+  .layer,
+  .layer1 {
     width: 387px;
     height: 251px;
     flex-shrink: 0;
@@ -48,15 +49,9 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: -1;
   }
   .layer1 {
-    width: 387px;
-    height: 251px;
-    flex-shrink: 0;
-    border-radius: 387px;
-    background: var(--Primary-Color, #a6602d);
-    filter: blur(200px);
-    position: absolute;
     top: 0;
     right: 0;
   }
