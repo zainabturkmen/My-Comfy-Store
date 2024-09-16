@@ -4,9 +4,10 @@ import { useCartContext } from "../context/cart_context";
 import { formatPrice } from "../utils/helpers";
 import { Link } from "react-router-dom";
 import Contact from "./Contact";
+import StripeCheckout from "./StripeCheckout";
 
 const CartTotals = () => {
-  const { total_amount, shipping_fee } = useCartContext();
+  const { total_amount, shipping_fee, cart } = useCartContext();
 
   return (
     <Wrapper>
@@ -23,8 +24,16 @@ const CartTotals = () => {
             order total :{" "}
             <span>{formatPrice(total_amount + shipping_fee)}</span>
           </h4>
-              </article>
+        </article>
       </div>
+      {cart.length < 1 ? (
+        <div className="empty">
+          <h2>your cart is empty</h2>
+          <Link to="/products" className="btn">Fill it</Link>
+        </div>
+      ) : (
+        <StripeCheckout />
+      )}
     </Wrapper>
   );
 };
@@ -45,8 +54,8 @@ const Wrapper = styled.div`
       display: grid;
       grid-template-columns: 200px 1fr;
     }
-    span{
-        font-weight: 400;
+    span {
+      font-weight: 400;
     }
     @media (min-width: 776px) {
       justify-content: flex-end;
