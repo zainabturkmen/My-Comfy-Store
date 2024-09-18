@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -21,6 +21,12 @@ const CheckoutForm = () => {
   const navigate = useNavigate();
 
   // STRIPE STUFF
+
+  const [succeeded, setSucceeded] = useState(false);
+  const [error, setError] = useState(null);
+  const [processing, setProcessing] = useState("")
+  const [disabled, setDisabled] = useState(true)
+
 
   const cardStyle = {
     style: {
