@@ -20,6 +20,8 @@ const CheckoutForm = () => {
   const { myUser } = useUserContext();
   const navigate = useNavigate();
 
+  // STRIPE STUFF
+
   const cardStyle = {
     style: {
       base: {
