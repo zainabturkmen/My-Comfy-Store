@@ -48,7 +48,10 @@ const CheckoutForm = () => {
     },
   };
 
-  
+  const createPaymentIntent = async () => {
+    
+  }
+
   return <h2>hello from stripe checkout</h2>;
 };
 
