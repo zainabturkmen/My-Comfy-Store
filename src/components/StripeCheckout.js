@@ -53,8 +53,9 @@ const CheckoutForm = () => {
   };
 
   useEffect(() => {
-    createPaymentIntent()
-  })
+    createPaymentIntent();
+    // eslint-disable
+  },[]);
 
   return <h2>hello from stripe checkout</h2>;
 };
