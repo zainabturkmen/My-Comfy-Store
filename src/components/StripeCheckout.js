@@ -52,6 +52,10 @@ const CheckoutForm = () => {
     console.log("hello fromm stripe checkout");
   };
 
+  useEffect(() => {
+    createPaymentIntent()
+  })
+
   return <h2>hello from stripe checkout</h2>;
 };
 
