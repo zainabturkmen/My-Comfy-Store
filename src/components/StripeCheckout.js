@@ -27,6 +27,8 @@ const CheckoutForm = () => {
   const [processing, setProcessing] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSEcret] = useState("");
+  const stripe = useStripe();
+  const elements = useElements();
 
   const cardStyle = {
     style: {
