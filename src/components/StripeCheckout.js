@@ -47,6 +47,8 @@ const CheckoutForm = () => {
       },
     },
   };
+
+  
   return <h2>hello from stripe checkout</h2>;
 };
 
