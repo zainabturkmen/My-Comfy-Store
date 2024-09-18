@@ -54,9 +54,11 @@ const CheckoutForm = () => {
 
   useEffect(() => {
     createPaymentIntent();
-    // eslint-disable
-  },[]);
+    // eslint-disable-next-line
+  }, []);
 
+  const handleChange = async (event) => {};
+  const handleSubmit = async (event) => {};
   return <h2>hello from stripe checkout</h2>;
 };
 
