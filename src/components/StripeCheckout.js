@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -49,8 +49,8 @@ const CheckoutForm = () => {
   };
 
   const createPaymentIntent = async () => {
-    
-  }
+    console.log("hello fromm stripe checkout");
+  };
 
   return <h2>hello from stripe checkout</h2>;
 };
