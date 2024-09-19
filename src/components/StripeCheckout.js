@@ -61,7 +61,14 @@ const CheckoutForm = () => {
   const handleSubmit = async (ev) => {};
   return (
     <div>
-      <form id="payment-form" onSubmit={handleSubmit}></form>
+      <form id="payment-form" onSubmit={handleSubmit}>
+        <CardElement
+          id="card-element"
+          options={cardStyle}
+          onChange={handleChange}
+        />
+        <button disabled={processing || disabled || succeeded} id="submit"></button>
+      </form>
     </div>
   );
 };
