@@ -67,7 +67,18 @@ const CheckoutForm = () => {
           options={cardStyle}
           onChange={handleChange}
         />
-        <button disabled={processing || disabled || succeeded} id="submit"></button>
+        <button disabled={processing || disabled || succeeded} id="submit">
+          <span id="button-text">
+            {processing ? <div className="spinner" id="spinner"></div> : "Pay"}
+          </span>
+        </button>
+        {/* SHow any error that happens when processing the payment */}
+        {error && (
+          <div className="card-error" role="alret">
+            {error}
+          </div>
+        )}
+        {/* show a success message upon compeltion  */}
       </form>
     </div>
   );
