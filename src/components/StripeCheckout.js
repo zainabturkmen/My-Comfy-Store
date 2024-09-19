@@ -59,7 +59,11 @@ const CheckoutForm = () => {
 
   const handleChange = async (event) => {};
   const handleSubmit = async (ev) => {};
-  return <div>hello from stripe checkout</div>;
+  return (
+    <div>
+      <form id="payment-form" onSubmit={handleSubmit}></form>
+    </div>
+  );
 };
 
 const StripeCheckout = () => {
