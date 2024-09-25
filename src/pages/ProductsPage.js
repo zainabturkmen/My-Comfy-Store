@@ -171,6 +171,8 @@ const Wrapper = styled.div`
   margin-top: 5rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  display: flex;
+  justify-content: space-between;
   .search {
     font-size: 1.1rem;
     background-color: #f0eeee;
@@ -179,6 +181,7 @@ const Wrapper = styled.div`
     color: #000;
     width: 215px;
   }
+
   h3 {
     margin-top: 2.2rem;
     margin-bottom: 0.6rem;
