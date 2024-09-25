@@ -62,7 +62,7 @@ const Wrapper = styled.div`
     background-color: #a6602d;
     width: 100px;
     height: 3px;
-    margin: 0 auto;
+    margin: 0 auto; 
   }
 
   .featured {
