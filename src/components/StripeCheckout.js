@@ -74,7 +74,8 @@ const CheckoutForm = () => {
       {
         succeeded ?
           <article>
-            <h4></h4>
+            <h4>Thank you</h4>
+            <h4>Your payment was successful</h4>
           </article>
       }
       <form id="payment-form" onSubmit={handleSubmit}>
