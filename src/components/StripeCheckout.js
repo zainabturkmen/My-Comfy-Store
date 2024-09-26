@@ -86,7 +86,8 @@ const CheckoutForm = () => {
       setSucceeded(true);
       setTimeout(() => {
         clearCart();
-      }, 10000);
+        navigate("/");
+      }, 5000);
     }
   };
 
