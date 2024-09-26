@@ -70,7 +70,13 @@ const CheckoutForm = () => {
     setError(event.error ? event.error.message : "");
   };
   const handleSubmit = async (ev) => {
-    ev.preventDefault()
+    ev.preventDefault();
+    setProcessing(true);
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        
+      },
+    });
   };
 
   return (
