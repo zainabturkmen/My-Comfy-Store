@@ -66,7 +66,9 @@ const CheckoutForm = () => {
   }, []);
 
   const handleChange = async (event) => {
-    
+    setDisabled(event.empty)
+    setError(event.error?   )
+
   };
   const handleSubmit = async (ev) => {};
 
