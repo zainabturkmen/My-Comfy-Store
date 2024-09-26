@@ -66,6 +66,9 @@ const Wrapper = styled.div`
       position: absolute;
       right: -1em;
       top: -0.9em;
+      width: 2em;
+      height: 1.8em;
+      text-align: center;
     }
   }
 
