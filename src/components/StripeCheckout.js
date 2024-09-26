@@ -57,9 +57,7 @@ const CheckoutForm = () => {
       );
       console.log(data.clientSecret);
       setClientSecret(data.clientSecret);
-    } catch (error) {
-      console.log(error.response);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
@@ -68,9 +66,17 @@ const CheckoutForm = () => {
   }, []);
 
   const handleChange = async (event) => {};
-  const handleSubmit = async (ev) => {};
+  const handleSubmit = async (ev) => { };
+  
   return (
+
     <div>
+      {
+        succeeded ?
+          <article>
+            <h4></h4>
+          </article>
+      }
       <form id="payment-form" onSubmit={handleSubmit}>
         <CardElement
           id="card-element"
