@@ -69,7 +69,9 @@ const CheckoutForm = () => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
-  const handleSubmit = async (ev) => {};
+  const handleSubmit = async (ev) => {
+    ev.preventDefault()
+  };
 
   return (
     <div>
