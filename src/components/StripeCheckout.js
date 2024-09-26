@@ -66,18 +66,21 @@ const CheckoutForm = () => {
   }, []);
 
   const handleChange = async (event) => {};
-  const handleSubmit = async (ev) => { };
-  
-  return (
+  const handleSubmit = async (ev) => {};
 
+  return (
     <div>
-      {
-        succeeded ?
+      {succeeded ? (
+        <article>
+          <h4>Thank you</h4>
+          <h4>Your payment was successful!</h4>
+          <h4>Redirecting to home page short</h4>
+        </article>
+      ) : (
           <article>
-            <h4>Thank you</h4>
-            <h4>Your payment was successful</h4>
-          </article>
-      }
+            <h4>Hello, { myUser && myUser.name}</h4>
+        </article>
+      )}
       <form id="payment-form" onSubmit={handleSubmit}>
         <CardElement
           id="card-element"
