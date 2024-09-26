@@ -29,11 +29,15 @@ const Hero = () => {
       <article className="img-container">
         <div className="layer1"></div>
 
-        <div>
-          <img src={image1} alt="nice couch" className="main-img" />
-          <img src={image2} alt="nice couch" className="accent-img1" />
-          <img src={image3} alt="nice couch" className="accent-im2" />
-          <img src={image4} alt="nice couch" className="accent-im3" />
+        <div className="img-con">
+          <div className="mini">
+            <img src={image1} alt="nice couch" className="main-img" />
+            <img src={image2} alt="nice couch" className="accent-img1" />
+          </div>
+          <div className="mini1">
+            <img src={image3} alt="nice couch" className="accent-img2" />
+            <img src={image4} alt="nice couch" className="accent-img3" />
+          </div>
         </div>
       </article>
     </Wrapper>
@@ -150,13 +154,31 @@ const Wrapper = styled.div`
     }
 
     img {
-      width: 220px;
+      width: 43%;
       height: 200px;
+      border-radius: 20px 0px 20px 20px;
     }
-    .main-img {
+    .img-con {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
     }
+
+    .mini,
+    .mini1 {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+    }
+
     .accent-img1 {
-      margin-bottom: 2em;
+      position: absolute;
+      right: 3.5em;
+      top: -3em;
+    }
+    .accent-img3 {
+      position: relative;
+      top: -3em;
     }
   }
 `;
