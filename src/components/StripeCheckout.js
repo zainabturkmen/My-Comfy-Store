@@ -65,7 +65,9 @@ const CheckoutForm = () => {
     // eslint-disable-next-line
   }, []);
 
-  const handleChange = async (event) => {};
+  const handleChange = async (event) => {
+    
+  };
   const handleSubmit = async (ev) => {};
 
   return (
@@ -74,7 +76,7 @@ const CheckoutForm = () => {
         <article>
           <h4>Thank you</h4>
           <h4>Your payment was successful!</h4>
-          <h4>Redirecting to home page short</h4>
+          <h4>Redirecting to home page shortly</h4>
         </article>
       ) : (
         <article>
