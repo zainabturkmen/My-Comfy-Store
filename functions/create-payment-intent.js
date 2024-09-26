@@ -1,5 +1,9 @@
 //domain/.netlify/functions/create-payment-intent
 
+require("dotenv").config();
+
+const stripe = require("")
+
 exports.handler = async function (event, context) {
   if (event.body) {
     const { cart, shipping_fee, total_amount } = JSON.parse(event.body);
@@ -12,6 +16,6 @@ exports.handler = async function (event, context) {
   }
   return {
     statusCode: 200,
-    body:"Create Payment Intent"
-  }
+    body: "Create Payment Intent",
+  };
 };
