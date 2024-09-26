@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import image1 from "../assets/Image1.png";
-import image2 from "../assets/Image2.png";
+import image1 from "../assets/1.png";
+import image2 from "../assets/2.png";
+import image3 from "../assets/3.png";
+import image4 from "../assets/4.png";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 const Hero = () => {
@@ -27,8 +29,12 @@ const Hero = () => {
       <article className="img-container">
         <div className="layer1"></div>
 
-        <img src={image1} alt="nice couch" className="main-img" />
-        <img src={image2} alt="nice couch" className="accent-img" />
+        <div>
+          <img src={image1} alt="nice couch" className="main-img" />
+          <img src={image2} alt="nice couch" className="accent-img1" />
+          <img src={image3} alt="nice couch" className="accent-im2" />
+          <img src={image4} alt="nice couch" className="accent-im3" />
+        </div>
       </article>
     </Wrapper>
   );
@@ -143,32 +149,14 @@ const Wrapper = styled.div`
       position: relative;
     }
 
+    img {
+      width: 220px;
+      height: 200px;
+    }
     .main-img {
-      width: 100%;
-      height: 550px;
-      object-fit: cover;
-      position: relative;
     }
-    .accent-img {
-      width: 270px;
-      height: 150px;
-      object-fit: cover;
-      position: absolute;
-      bottom: 0.5em;
-      right: 0;
-      transform: translateX(-100%);
-      border-radius: 5px;
-    }
-    .img-container::before {
-      content: "";
-      position: absolute;
-      width: 14%;
-      height: 80%;
-      background: #d9d9d9;
-      right: 20em;
-      top: 5em;
-      left: -3.4em;
-      border-radius: 10px;
+    .accent-img1 {
+      margin-bottom: 2em;
     }
   }
 `;
