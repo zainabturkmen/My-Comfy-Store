@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { Link } from "react-router-dom";
-import { CartColumns, CartItems, CartTotals, StripeCheckout } from "../components";
+import {
+  CartColumns,
+  CartItems,
+  CartTotals,
+  StripeCheckout,
+} from "../components";
 
 const CartContent = () => {
   const { cart, clearCart } = useCartContext();
@@ -21,7 +26,7 @@ const CartContent = () => {
           Clear shopping Cart
         </button>
       </div>
-      <div>
+      <div className="calc">
         <CartTotals />
         {cart.length < 1 ? (
           <div className="empty">
@@ -60,9 +65,27 @@ const Wrapper = styled.div`
     }
   }
 
+  .calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 6em;
+  }
+
   @media (max-width: 776px) {
     .btn {
       font-size: 0.7em;
+    }
+    .calc {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 1300px) {
+    .calc {
+      display: flex;
+      flex-direction: column;
     }
   }
 `;

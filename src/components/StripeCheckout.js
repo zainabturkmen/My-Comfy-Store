@@ -147,8 +147,14 @@ const StripeCheckout = () => {
 };
 
 const Wrapper = styled.section`
+article{
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: .2em;
+}
   form {
-    width: 30vw;
+    width: 450px;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
