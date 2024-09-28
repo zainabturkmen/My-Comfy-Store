@@ -40,20 +40,20 @@ const FeaturedProducts = () => {
 };
 
 const Wrapper = styled.div`
-  margin-top: 3em;
+  margin-top: 6em;
   background-color: #eeebeb;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2em;
+  padding-top: 5em;
 
   .title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 4em;
     h1 {
       font-size: 35px;
     }
