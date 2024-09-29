@@ -1,5 +1,3 @@
-import { act, useEffect } from "react";
-
 const products_reducer = (state, action) => {
   if (action.type === "SIDEBAR_OPEN") {
     return { ...state, isSidebarOpen: true };

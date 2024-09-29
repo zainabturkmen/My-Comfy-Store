@@ -1,6 +1,3 @@
-import { toBeEnabled } from "@testing-library/jest-dom/matchers";
-import React from "react";
-
 const filter_reducer = (state, action) => {
   if (action.type === "LOAD_PRODUCTS") {
     let maxPrice = action.payload.map((p) => p.price);
@@ -74,7 +71,7 @@ const filter_reducer = (state, action) => {
       });
     }
     // price
-    tempProducts = tempProducts.filter((product) => product.price <= price );
+    tempProducts = tempProducts.filter((product) => product.price <= price);
     // shipping
     if (shipping) {
       tempProducts = tempProducts.filter(

@@ -1,5 +1,3 @@
-import React from "react";
-
 const cart_reducer = (state, action) => {
   if (action.type === "ADD_TO_CART") {
     const { id, color, amount, product } = action.payload;

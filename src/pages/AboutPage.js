@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "../assets/aboutIamge.png";
 import { HeroPage } from "../components";
 
 const AboutPage = () => {
@@ -28,7 +27,7 @@ const AboutPage = () => {
 };
 
 const Wrapper = styled.div`
-height: 80vh;
+  height: 80vh;
   .text-container {
     display: flex;
     flex-direction: column;

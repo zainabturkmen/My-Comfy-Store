@@ -12,7 +12,6 @@ import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 import { formatPrice } from "../utils/helpers";
 import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
 
 const promis = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
