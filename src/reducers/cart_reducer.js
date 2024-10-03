@@ -77,7 +77,6 @@ const cart_reducer = (state, action) => {
   }
 
   throw new Error(`No Matching "${action.type}" - action type`); // Move this line
-  return state; // This should be the fallback return
 };
 
 export default cart_reducer;
