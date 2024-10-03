@@ -47,7 +47,7 @@ const SingleProdut = () => {
         navigate("/");
       }, 3000);
     }
-  }, [error]);
+  }, [error, navigate]);
 
   if (loading) {
     return <Loading />;
