@@ -39,7 +39,7 @@ const SingleProdut = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, [id, fetchSingleProduct]);
+  }, [id]);
 
   useEffect(() => {
     if (error) {
@@ -47,7 +47,7 @@ const SingleProdut = () => {
         navigate("/");
       }, 3000);
     }
-  }, [error, navigate]);
+  }, [error]);
 
   if (loading) {
     return <Loading />;
