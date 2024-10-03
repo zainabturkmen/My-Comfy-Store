@@ -2,12 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useCartContext } from "../context/cart_context";
 import { formatPrice } from "../utils/helpers";
-import { Link } from "react-router-dom";
-import Contact from "./Contact";
-import StripeCheckout from "./StripeCheckout";
 
 const CartTotals = () => {
-  const { total_amount, shipping_fee, cart } = useCartContext();
+  const { total_amount, shipping_fee } = useCartContext();
 
   return (
     <Wrapper>
@@ -69,7 +66,6 @@ const Wrapper = styled.div`
     }
   }
   @media (max-width: 776px) {
-
     .total-div {
       width: 350px;
     }

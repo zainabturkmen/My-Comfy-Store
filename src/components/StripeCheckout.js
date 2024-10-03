@@ -123,7 +123,7 @@ const CheckoutForm = () => {
         </button>
         {/* SHow any error that happens when processing the payment */}
         {error && (
-          <div className="card-error" role="alret">
+          <div className="card-error" role="alert">
             {error}
           </div>
         )}
