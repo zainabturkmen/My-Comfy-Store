@@ -26,7 +26,7 @@ const SingleProdut = () => {
   } = useProductsContext();
   const { name, price, description, stock, stars, reviews, id: sku, company, images, } = product;
   
-  // console.log(product);
+  console.log(product);
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
