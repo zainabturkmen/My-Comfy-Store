@@ -32,7 +32,7 @@ const SingleProdut = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, [id]);
+  }, []);
 
   useEffect(() => {
     if (error) {
