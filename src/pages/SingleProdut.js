@@ -25,14 +25,21 @@ const SingleProdut = () => {
     fetchSingleProduct,
   } = useProductsContext();
 
-
-  const { name, price, description, stock, stars, reviews, id: sku, company, images, } = product;
-  
-
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    reviews,
+    id: sku,
+    company,
+    images,
+  } = product;
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, []);
+  }, [id, SingleProdut]);
 
   useEffect(() => {
     if (error) {
