@@ -38,18 +38,8 @@ const SingleProdut = () => {
   } = product;
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchSingleProduct(`${url}${id}`);
-    };
-
-    fetchData();
-
-    // You could clean up with a return function here if needed.
-  }, [id]); // Only `id` is a dependency here
-
-  // useEffect(() => {
-  //   fetchSingleProduct(`${url}${id}`);
-  // }, [id, fetchSingleProduct]);
+    fetchSingleProduct(`${url}${id}`);
+  }, [id]);
 
   useEffect(() => {
     if (error) {
