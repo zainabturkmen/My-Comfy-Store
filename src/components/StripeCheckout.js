@@ -59,6 +59,7 @@ const CheckoutForm = () => {
           },
         }
       );
+      console.log("Client Secret:", data.clientSecret);
 
       setClientSecret(data.clientSecret);
     } catch (error) {}
