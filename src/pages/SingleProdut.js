@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -36,11 +36,10 @@ const SingleProdut = () => {
     company,
     images,
   } = product;
-  
 
   const handleFetchSingleProduct = useCallback(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, [id, fetchSingleProduct]);
+  }, [id]);
 
   useEffect(() => {
     handleFetchSingleProduct();
