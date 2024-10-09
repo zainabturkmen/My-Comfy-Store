@@ -41,45 +41,53 @@ const filter_reducer = (state, action) => {
     const { name, value } = action.payload;
     return { ...state, filters: { ...state.filters, [name]: value } };
   }
+
   if (action.type === "FILTER_PRODUCTS") {
     const { all_products } = state;
     const { text, category, company, color, price, shipping } = state.filters;
     let tempProducts = [...all_products];
-    // filtering
-    // text
+
+    // filtering by text
     if (text) {
       tempProducts = tempProducts.filter((product) => {
-        return product.name.toLowerCase().startsWith(text);
+        return product.name.toLowerCase().startsWith(text.toLowerCase());
       });
     }
-    // category
+
+    // filtering by category
     if (category !== "all") {
       tempProducts = tempProducts.filter(
         (product) => product.category === category
       );
     }
-    // company
+
+    // filtering by company
     if (company !== "all") {
       tempProducts = tempProducts.filter(
         (product) => product.company === company
       );
     }
-    // color
+
+    // filtering by color
     if (color !== "all") {
       tempProducts = tempProducts.filter((product) => {
-        return product.colors.find((c) => c === color);
+        return product.colors?.includes(color);
       });
     }
-    // price
+
+    // filtering by price
     tempProducts = tempProducts.filter((product) => product.price <= price);
-    // shipping
+
+    // filtering by shipping
     if (shipping) {
       tempProducts = tempProducts.filter(
         (product) => product.shipping === true
       );
     }
+
     return { ...state, filtered_products: tempProducts };
   }
+
   if (action.type === "CLEAR_FILTERS") {
     return {
       ...state,
@@ -94,6 +102,7 @@ const filter_reducer = (state, action) => {
       },
     };
   }
+
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 
