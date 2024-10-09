@@ -37,17 +37,9 @@ const SingleProdut = () => {
     images,
   } = product;
 
-  const handleFetchSingleProduct = useCallback(() => {
-    fetchSingleProduct(`${url}${id}`);
-  }, [id]);
-
   useEffect(() => {
-    handleFetchSingleProduct();
-  }, [handleFetchSingleProduct]);
-
-  // useEffect(() => {
-  //   fetchSingleProduct(`${url}${id}`);
-  // }, [id]);
+    fetchSingleProduct(`${url}${id}`);
+  }, [id, fetchSingleProduct]);
 
   useEffect(() => {
     if (error) {
