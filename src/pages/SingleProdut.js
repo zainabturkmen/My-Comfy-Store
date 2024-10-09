@@ -35,11 +35,11 @@ const SingleProdut = () => {
     id: sku,
     company,
     images,
-  } = product;
+  } = product ;
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
-  }, [id, fetchSingleProduct]);
+  }, [id]);
 
   useEffect(() => {
     if (error) {
