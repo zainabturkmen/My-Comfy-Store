@@ -36,10 +36,19 @@ const SingleProdut = () => {
     company,
     images,
   } = product;
+  
+
+  const handleFetchSingleProduct = useCallback(() => {
+    fetchSingleProduct(`${url}${id}`);
+  }, [id, fetchSingleProduct]);
 
   useEffect(() => {
-    fetchSingleProduct(`${url}${id}`);
-  }, [id]);
+    handleFetchSingleProduct();
+  }, [handleFetchSingleProduct]);
+
+  // useEffect(() => {
+  //   fetchSingleProduct(`${url}${id}`);
+  // }, [id]);
 
   useEffect(() => {
     if (error) {
