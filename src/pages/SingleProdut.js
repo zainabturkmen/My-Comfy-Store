@@ -35,10 +35,11 @@ const SingleProdut = () => {
     id: sku,
     company,
     images,
-  } = product ;
+  } = product;
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => {
