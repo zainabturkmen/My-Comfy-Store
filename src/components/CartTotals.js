@@ -40,15 +40,14 @@ const Wrapper = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1em;
     margin-top: 6em;
+    gap: 1em;
     width: 100%;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
       0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
     border-radius: 7px;
-    /* padding: 40px; */
 
     h4 {
       display: grid;
@@ -68,6 +67,9 @@ const Wrapper = styled.div`
   @media (max-width: 776px) {
     .total-div {
       width: 350px;
+    }
+    article {
+      margin-top: -1em;
     }
   }
 `;
