@@ -6,7 +6,7 @@ import { formatPrice } from "../utils/helpers";
 const CartTotals = () => {
   const { total_amount, shipping_fee } = useCartContext();
 
-  return (
+  return ( 
     <Wrapper>
       <div className="total-div">
         <article>
